@@ -1,7 +1,8 @@
 import cors from "cors"
 import {createServer} from "http";
 import services from "./services";
-
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 //EXPRESS
@@ -17,5 +18,5 @@ app.use("/api",services)
 const server = createServer(app);
 server.listen(process.env.PORT);
 server.on("listening",()=>{
-    console.log(`Server is up and running on port : ${process.env.PORT}`)
+    console.log(`Server is up and running on port: ${process.env.PORT}`)
 })

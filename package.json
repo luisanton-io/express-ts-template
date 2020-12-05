@@ -8,11 +8,11 @@
   "repository": "https://github.com/ubeytdemirr/express-typescript-starter",
   "keywords": [],
   "scripts": {
-    "start": "nodemon -r dotenv/config  ./build/main dotenv_config_path=./env/.production.env",
-    "dev": "nodemon -r dotenv/config  ./build/main dotenv_config_path=./env/.dev.env",
-    "build": "tsc -p tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev ./src/index.ts --watch src",
+    "build": "tsc",
+    "start": "node ./build/index.js",
     "fix:tslint": "tslint --fix --project .",
-    "watch": "tsc",
     "doc:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
     "doc:publish": "gh-pages -d build/docs"
   },
@@ -22,7 +22,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "helmet": "^4.1.0"
+    "helmet": "^4.1.0",
+    "ts-node-dev": "^1.0.0"
   },
   "devDependencies": {
     "@bitjson/typedoc": "^0.15.0-0",
